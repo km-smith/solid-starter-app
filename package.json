@@ -8,20 +8,26 @@
     "build:static": "cp src/index.html dist/index.html",
     "build:js": "npx rollup -c",
     "build": "npm run build:clean && npm run build:static && npm run build:js",
-    "server": "npx http-server dist"
+    "dev": "npm run start & npx rollup -c -w",
+    "start": "npx http-server dist"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "solid-element": "^0.6.1",
     "solid-js": "^0.9.3"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "babel-preset-solid": "^0.1.0",
     "http-server": "^0.11.1",
     "rimraf": "^2.6.3",
     "rollup": "^1.17.0",
     "rollup-plugin-babel": "^4.3.3",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-terser": "^5.1.2"
   }
 }

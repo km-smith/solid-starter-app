@@ -1,5 +1,11 @@
 {
 	"presets": [
 	  "solid"
-	]
+  ],
+  "exclude": [
+    "node_modules/**"
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import"
+  ]
 }
