@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:clean": "rimraf dist && mkdir dist",
+    "build:clean": "rimraf dist/*",
     "build:static": "cp src/index.html dist/index.html",
     "build:js": "npx rollup -c",
-    "build": "npm run build:clean && npm run build:static && npm run build:js",
-    "dev": "npm run start & npx rollup -c -w",
+    "watch:js": "npx rollup -c -w",
+    "build": "run-s build:clean build:static build:js",
+    "dev": "npm run build && run-p start watch:js",
     "start": "npx http-server dist"
   },
   "author": "",
@@ -22,6 +23,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "babel-preset-solid": "^0.1.1",
     "http-server": "^0.11.1",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.0",
     "rollup": "^1.23.1",
     "rollup-plugin-babel": "^4.3.3",

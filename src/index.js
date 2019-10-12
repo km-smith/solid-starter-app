@@ -1,10 +1,5 @@
-import { render } from 'solid-js/dom';
+import { customElement } from 'solid-element';
 
-const HelloMessage = ({name}) => (
-	<div>Hello {name}</div>
-);
-
-render(
-	() => <HelloMessage name="Solid Starter App" />,
-	document.getElementById("app")
-);
+customElement('solid-starter-app', {name: 'world'}, ({ name }) => {
+  return <h1>Hello {( name )}</h1>;
+});
