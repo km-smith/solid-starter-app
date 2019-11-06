@@ -2,15 +2,13 @@
   "name": "solid-starter-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "build:clean": "rimraf dist/*",
-    "build:static": "cp src/index.html dist/index.html",
+    "build:clean": "rimraf dist/js/*",
     "build:js": "npx rollup -c",
     "watch:js": "npx rollup -c -w",
-    "build": "run-s build:clean build:static build:js",
+    "build": "run-s build:clean build:js",
     "dev": "npm run build && run-p start watch:js",
-    "start": "npx http-server dist"
+    "start": "npx http-server public"
   },
   "author": "",
   "license": "ISC",

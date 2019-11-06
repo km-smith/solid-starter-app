@@ -8,7 +8,7 @@ const production = !process.env.ROLLUP_WATCH;
 export default {
 	input: 'src/index.js',
 	output: {
-    dir: 'dist/',
+    dir: 'public/js',
 		format: 'esm',
 	},
 	plugins: [
