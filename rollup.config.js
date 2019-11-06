@@ -13,8 +13,8 @@ export default {
 	},
 	plugins: [
 		resolve(),
-    babel(),
-    postcss({ inject: false }),
+    	babel(),
+    	postcss({ inject: false }),
 		production && terser()
 	]
 }
